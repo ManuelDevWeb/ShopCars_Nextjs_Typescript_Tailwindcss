@@ -4,8 +4,14 @@ import { Hero, SearchBar, CustomFilter, CarCard } from "@/components";
 // Utils
 import { fetchCars } from "@/utils";
 
-export default async function Home() {
-  const allCars = await fetchCars();
+export default async function Home({ searchParams }: any) {
+  const allCars = await fetchCars({
+    manufacturer: searchParams.manufacturer || "",
+    model: searchParams.model || "",
+    year: searchParams.year || 2022,
+    fuel: searchParams.fuel || "",
+    limit: searchParams.limit || 10,
+  });
 
   // Log in server, because every component and page by default in nextjs is a Server Side Component
   // console.log(allCars);
