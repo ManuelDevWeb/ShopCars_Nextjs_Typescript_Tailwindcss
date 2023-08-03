@@ -112,7 +112,7 @@
 }
 
 .car-card__image {
-  @apply relative w-full h-40 my-3 object-contain;
+  @apply relative w-full h-40 my-3;
 }
 
 .car-card__icon-container {

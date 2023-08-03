@@ -38,7 +38,13 @@ const CarCard = ({ car }: CarCardProps) => {
       </p>
 
       <div className="car-card__image">
-        <Image src={"/hero.png"} alt="car model" fill priority />
+        <Image
+          src={"/hero.png"}
+          alt="car model"
+          fill
+          priority
+          className="object-contain"
+        />
       </div>
 
       <div className="relative flex w-full mt-2">
