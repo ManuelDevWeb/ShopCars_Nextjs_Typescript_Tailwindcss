@@ -11,16 +11,16 @@ import { updateSearchParams } from "@/utils";
 // Types
 import { CustomFilterProps } from "@/types";
 
-const CustomFilter = ({ title, options }: CustomFilterProps) => {
+const CustomFilter = ({ title, options, setFilter }: CustomFilterProps) => {
   const [selected, setSelected] = useState(options[0]);
 
-  const router = useRouter();
+  // const router = useRouter();
 
-  const handleUpdateParams = (e: { title: string; value: string }) => {
-    const newPathName = updateSearchParams(title, e.value.toLowerCase());
+  // const handleUpdateParams = (e: { title: string; value: string }) => {
+  //   const newPathName = updateSearchParams(title, e.value.toLowerCase());
 
-    router.push(newPathName);
-  };
+  //   router.push(newPathName);
+  // };
 
   return (
     <div className="w-fit">
@@ -28,7 +28,8 @@ const CustomFilter = ({ title, options }: CustomFilterProps) => {
         value={selected}
         onChange={(e) => {
           setSelected(e);
-          handleUpdateParams(e);
+          // handleUpdateParams(e);
+          setFilter(e.value);
         }}
       >
         <div className="relative w-fit z-10">
